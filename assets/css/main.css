@@ -1,0 +1,24 @@
+body {
+	font-family: sans-serif;
+}
+
+p {
+	text-align: center;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+h2 {
+	border-bottom: solid 2px #E52D19FF;
+	padding-bottom: 20px;
+}
+
+.character {
+	display: inline-block;
+	width: 200px;
+	background-color: #f4faccff;
+	border: 2px solid #31B9CDFF;
+}

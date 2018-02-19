@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>rpg game</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./assets/css/main.css" type="text/css">
 </head>
+
 <body>
-	
+
+	<h2>Characters</h2>
+	<!-- characters avalable to be picked to play as or to fight against -->
+	<div id="idle">
+		<div id="1" class="character">
+			<p>one</p>
+			<img src="https://placehold.it/100" alt="">
+			<p>200</p>
+		</div>
+		<div id="2" class="character">
+			<p>two</p>
+			<img src="https://placehold.it/100" alt="">
+			<p>200</p>
+		</div>
+		<div id="3" class="character">
+			<p>three</p>
+			<img src="https://placehold.it/100" alt="">
+			<p>200</p>
+		</div>
+		<div id="4" class="character">
+			<p>four</p>
+			<img src="https://placehold.it/100" alt="">
+			<p>200</p>
+		</div>
+	</div>
+
+	<h2>player <span><button id="attack">attack</button></span></h2>
+	<!-- player's character -->
+	<div id="player"></div>
+
+	<h2>defense</h2>
+	<!-- enemy character -->
+	<div id="defense"></div>
+
+
+	<script src="./assets/javascript/game.js"></script>
 </body>
+
 </html>
