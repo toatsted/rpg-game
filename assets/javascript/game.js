@@ -1,10 +1,18 @@
 $(document).ready(function(){
+	let player = null;
+
 	$(".character").on("click", function(){
 		let char = $(this);
-		let id = char.attr("id");
-
 		placehold = char.detach();
-		$("#player").append(placehold);
+
+		if(char.parent("#idle")){
+			if(player === null){
+				player = char;
+				$("#player").append(placehold);
+			}else{
+				$("#defense").append(placehold);
+			}
+		}
+
 	});
 });
-
