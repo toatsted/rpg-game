@@ -13,7 +13,7 @@ img {
 }
 
 h2 {
-	border-bottom: solid 2px #E52D19FF;
+	border-bottom: solid 2px #e52d19;
 	padding-bottom: 20px;
 	font-size: 40px;
 	margin-bottom: 20px;
@@ -24,10 +24,10 @@ h3 {
 	font-size: 25px;
 }
 
-.character, #playerid {
+.character {
 	display: inline-block;
 	width: 150px;
-	background-color: #f4faccff;
-	border: 2px solid #31B9CDFF;
+	background-color: #f4facc;
+	border: 2px solid #31b9cd;
 	margin: 20px;
 }
