@@ -1,56 +1,48 @@
-$(document).ready(function() {
+$(document).ready(function(){
 
-	function Card(hp, ap, cap) {
-		this.hp = hp;
-		this.ap = ap;
-		this.cap = cap;
-	}
+	playerCard = null;
+	defenderCard = null;
 
-	let cardOne = new Card(200, 9, 20);
-	let cardTwo = new Card(180, 12, 22);
-	let cardThree = new Card(220, 8, 18);
-	let cardFour = new Card(200, 12, 30);
+	idleArea = $("#idle");
+	playerArea = $("#player");
+	defenderArea = $("#defense");
 
-	let playerCard = null;
-	let enemyCard = null;
+	$(".character").on("click", function(){
 
-	let idleArea = $("#idle");
-	let playerArea = $("#player")
-	let defenseArea = $("#defense")
+		let clicked = $(this);
 
-	$(".character").on("click", function() {
+		if(clicked.hasClass("idle")){
+			if(playerCard === null){
 
-		let char = $(this);
-		placehold = char.detach();
+				playerCard = clicked;
 
-		if (playerCard === null) {
-			playerCard = char;
-			playerArea.append(placehold);
+				playerCard.removeClass("idle");
+				playerCard.addClass("player");
 
-			$("#infoLine").text("choose a card to fight")
+				playerCard.detach();
+				playerArea.prepend(playerCard);
 
-		} else if (enemyCard === null) {
-			enemyCard = char;
-			defenseArea.append(placehold);
+				$("#infoLine").text("choose a card to fight")
 
-			$("#infoLine").html("<b>FIGHT!</b>")
+			}else if(defenderCard === null){
 
-			$("#playerText")
-				.html("player <span><button id='attack'>attack</button></span>");
+				defenderCard = clicked;
 
-		} else {
+				defenderCard.removeClass("idle");
+				defenderCard.addClass("defender");
 
-			idleArea.prepend(placehold);
-			if (char.parent().attr("id") === "defense") {
-				enemyCard = null;
-			} else if (char.parent().attr("id") === "player") {
-				playerCard = null;
+				defenderCard.detach();
+				defenderArea.prepend(defenderCard);
+
+				$("#buttonLine")
+					.html("player <span><button id='attackButton'>attack</button></span>");
+
+				$("#infoLine").html("<strong>FIGHT!</strong>");
 			}
 		}
 	});
 
-	$("#attack").on("click", function() {
-		console.log("cats");
-		console.log(playerArea.children("<div>").attr("id"));
+	$("#buttonLine").on("click", "#attackButton", function(){
 	});
+
 });
