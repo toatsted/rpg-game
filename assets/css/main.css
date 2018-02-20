@@ -16,9 +16,14 @@ h2 {
 	padding-bottom: 20px;
 }
 
+h3 {
+	margin-bottom: 40px;
+}
+
 .character {
 	display: inline-block;
-	width: 200px;
+	width: 150px;
 	background-color: #f4faccff;
 	border: 2px solid #31B9CDFF;
+	margin: 20px;
 }
