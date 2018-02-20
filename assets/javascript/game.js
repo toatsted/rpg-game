@@ -6,28 +6,36 @@ $(document).ready(function() {
 		this.cap = cap;
 	}
 
-	let player = null;
-	let enemy = null;
+	let playerCard = null;
+	let enemyCard = null;
+
+	let idleArea = $("#idle");
+	let playerArea = $("#player")
+	let defenseArea = $("#defense")
 
 	$(".character").on("click", function() {
 
 		let char = $(this);
 		placehold = char.detach();
 
-		if (char.parent("#idle")) {
-			if (player === null) {
+		if (playerCard === null) {
+			playerCard = char;
+			playerArea.append(placehold);
 
-				player = char;
-				$("#player").append(placehold);
-			} else if (enemy === null){
+			$("#infoLine").text("Character to fight")
 
-				enemy = char;
-				$("#defense").append(placehold);
+		} else if (enemyCard === null){
+			enemyCard = char;
+			defenseArea.append(placehold);
 
-				$("#playerText").html("player <span><button id='attack'>attack</button></span>");
-			} else {
-				$("#idle").append(placehold);
-			}
+			$("#infoLine").html("<b>FIGHT!</b>")
+
+			$("#playerText")
+				.html("player <span><button id='attack'>attack</button></span>");
+			
+		} else {
+
+			idleArea.prepend(placehold);
 		}
 	});
 });
