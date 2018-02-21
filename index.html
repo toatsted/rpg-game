@@ -6,47 +6,62 @@
 	<title>rpg game</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="./assets/css/main.css" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Fondamento" rel="stylesheet"> 
 </head>
 
 <body>
+	
+	<div class="container">
+		<h2><span><img src="./assets/images/ds3-logo.png" alt="dark souls 3 logo"></span></h2>
+		<!-- characters avalable to be picked to play as or to fight against -->
+		<div id="idle">
+			<div id="1" class="character idle">
+				<p>the dancer</p>
+				<img src="./assets/images/dancer.jpg" alt="dancer-of-the-boreal-valley.jpg">
+				<p class="hp">120</p>
+			</div>
+			<div id="2" class="character idle">
+				<p>nameless king</p>
+				<img src="./assets/images/nameless-king.jpg" alt="nameless-king.jpg">
+				<p class="hp">100</p>
+			</div>
+			<div id="3" class="character idle">
+				<p>pontiff sulyvahn</p>
+				<img src="./assets/images/pontiff.jpg" alt="pontiff-sulyvahn.jpg">
+				<p class="hp">150</p>
+			</div>
+			<div id="4" class="character idle">
+				<p>soul of cinder</p>
+				<img src="./assets/images/soul-of-cinder.jpg" alt="soul-of-cinder.jpg">
+				<p class="hp">180</p>
+			</div>
 
-	<h2>Characters</h2>
-	<!-- characters avalable to be picked to play as or to fight against -->
-	<div id="idle">
-		<div id="1" class="character idle">
-			<p>one</p>
-			<img src="https://placehold.it/100" alt="">
-			<p class="hp">200</p>
-		</div>
-		<div id="2" class="character idle">
-			<p>two</p>
-			<img src="https://placehold.it/100" alt="">
-			<p class="hp">180</p>
-		</div>
-		<div id="3" class="character idle">
-			<p>three</p>
-			<img src="https://placehold.it/100" alt="">
-			<p class="hp">220</p>
-		</div>
-		<div id="4" class="character idle">
-			<p>four</p>
-			<img src="https://placehold.it/100" alt="">
-			<p class="hp">200</p>
+			<h3 id="infoLine">choose your card</h3>
 		</div>
 
-		<h3 id="infoLine">choose your card</h3>
+
+
+		<div class="row">
+			<div class="col-6">
+				<!-- player's character -->
+				<h2 id="buttonLine">player </h2>
+				<div id="player"></div>
+				
+			</div>
+			<dov class="col-6">
+				<!-- enemy character -->
+				<h2>defense</h2>
+				<div id="defense"></div>
+				
+			</dov>
+
+		</div>
+
 	</div>
-
-
-	<h2 id="buttonLine">player </h2>
-	<!-- player's character -->
-	<div id="player"></div>
-
-	<h2>defense</h2>
-	<!-- enemy character -->
-	<div id="defense"></div>
 
 
 	<script src="./assets/javascript/game.js"></script>

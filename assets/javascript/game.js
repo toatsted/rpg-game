@@ -10,13 +10,13 @@ $(document).ready(function() {
 
 	// object to hold the cards
 	let cards = {
-		one: new Card(200, 18, 34),
+		one: new Card(120, 8, 12),
 
-		two: new Card(180, 19, 28),
+		two: new Card(100, 19, 5),
 
-		three: new Card(220, 17, 30),
+		three: new Card(150, 6, 15),
 
-		four: new Card(200, 20, 26),
+		four: new Card(180, 3 , 17),
 	}
 
 	// hold the jQuery objects of the card
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	infoLine = $("#infoLine");
 
 	// click on an idle character to select
-	$(".idle").on("click", function() {
+	idleArea.on("click", ".idle", function() {
 
 		let clicked = $(this);
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 			defenderArea.prepend(defenderCard);
 
 			$("#buttonLine")
-				.html("player <span><button id='attackButton'>attack</button></span>");
+				.html("player    <span><button id='attackButton'>attack</button></span>");
 
 			infoLine.html("<strong>FIGHT!</strong>");
 
@@ -135,7 +135,7 @@ $(document).ready(function() {
 				alert("You win!");
 
 				$("#buttonLine")
-				.html("player <span><button id='resetButton'>reset</button></span>");
+				.html("player<span><button id='resetButton'>reset</button></span>");
 			}
 
 		}else if(playerObj.health <= 0){
@@ -149,7 +149,7 @@ $(document).ready(function() {
 	});
 
 	$("#buttonLine").on("click", "#resetButton", function(){
-
+		location.reload()
 	});
 
 });
