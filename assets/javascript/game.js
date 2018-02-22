@@ -81,7 +81,7 @@ $(document).ready(function() {
 			defenderArea.prepend(defenderCard);
 
 			$("#buttonLine")
-				.html("player    <span><button id='attackButton'>attack</button></span>");
+				.html("player    <span><button class='btn' id='attackButton'>attack</button></span>");
 
 			infoLine.html("<strong>FIGHT!</strong>");
 
@@ -135,7 +135,7 @@ $(document).ready(function() {
 				alert("You win!");
 
 				$("#buttonLine")
-				.html("player<span><button id='resetButton'>reset</button></span>");
+				.html("player <span><button class='btn' id='resetButton'>reset</button></span>");
 			}
 
 		}else if(playerObj.health <= 0){
@@ -143,7 +143,7 @@ $(document).ready(function() {
 			alert("You Lost!");
 
 			$("#buttonLine")
-			.html("player <span><button id='resetButton'>reset</button></span>");
+			.html("player <span><button class='btn' id='resetButton'>reset</button></span>");
 
 		}
 	});
