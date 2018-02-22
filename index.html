@@ -19,23 +19,23 @@
 		<h2><span><img src="./assets/images/ds3-logo.png" alt="dark souls 3 logo"></span></h2>
 		<!-- characters avalable to be picked to play as or to fight against -->
 		<div id="idle">
-			<div id="1" class="character idle">
-				<p>the dancer</p>
+			<div id="1" class="card idle">
+				<p class="name">The Dancer</p>
 				<img src="./assets/images/dancer.jpg" alt="dancer-of-the-boreal-valley.jpg">
 				<p class="hp">120</p>
 			</div>
-			<div id="2" class="character idle">
-				<p>nameless king</p>
+			<div id="2" class="card idle">
+				<p class="name">Nameless King</p>
 				<img src="./assets/images/nameless-king.jpg" alt="nameless-king.jpg">
 				<p class="hp">100</p>
 			</div>
-			<div id="3" class="character idle">
-				<p>pontiff sulyvahn</p>
+			<div id="3" class="card idle">
+				<p class="name">Pontiff Sulyvahn</p>
 				<img src="./assets/images/pontiff.jpg" alt="pontiff-sulyvahn.jpg">
 				<p class="hp">150</p>
 			</div>
-			<div id="4" class="character idle">
-				<p>soul of cinder</p>
+			<div id="4" class="card idle">
+				<p class="name">Soul of Cinder</p>
 				<img src="./assets/images/soul-of-cinder.jpg" alt="soul-of-cinder.jpg">
 				<p class="hp">180</p>
 			</div>
@@ -47,18 +47,24 @@
 
 		<div class="row">
 			<div class="col-6">
-				<!-- player's character -->
+				<!-- player's card -->
 				<h2 id="buttonLine">player </h2>
 				<div id="player"></div>
 				
 			</div>
 			<dov class="col-6">
-				<!-- enemy character -->
+				<!-- enemy card -->
 				<h2>defense</h2>
 				<div id="defense"></div>
 				
 			</dov>
 
+		</div>
+		<div class="row">
+			<p id="lastAttack"></p>
+		</div>
+		<div class="row">
+			<p id="lastCAttack"></p>
 		</div>
 
 	</div>

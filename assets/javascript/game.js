@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 	infoLine = $("#infoLine");
 
-	// click on an idle character to select
+	// click on an idle card to select
 	idleArea.on("click", ".idle", function() {
 
 		let clicked = $(this);
@@ -112,7 +112,6 @@ $(document).ready(function() {
 		defenderObj.health -= playerObj.attack;
 		playerObj.health -= defenderObj.cAttack;
 
-		playerObj.attack += playerObj.baseAttack;
 
 		playerCard
 			.find(".hp")
@@ -122,6 +121,19 @@ $(document).ready(function() {
 			.find(".hp")
 			.text(defenderObj.health);
 
+		$("#lastAttack")
+			.text(playerCard.find(".name").text() + 
+			" attacked " + defenderCard.find(".name").text() + 
+			" for " + playerObj.attack + 
+			" damage!");
+
+		$("#lastCAttack")
+			.text(defenderCard.find(".name").text() +
+			" counter attacked " + playerCard.find(".name").text() +
+			" for " + defenderObj.cAttack + 
+			" damage!");
+
+		playerObj.attack += playerObj.baseAttack;
 
 		if(defenderObj.health <= 0){
 
@@ -129,7 +141,7 @@ $(document).ready(function() {
 			defenderCard = null;
 			defenderObj = null;
 
-			infoLine.text("select a new character to fight");
+			infoLine.text("select a new card to fight");
 
 			if(idleArea.children().length === 1){
 				alert("You win!");
