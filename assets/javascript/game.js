@@ -19,20 +19,22 @@ $(document).ready(function() {
 		four: new Card(180, 3 , 17),
 	}
 
+	let bossTheme = $(".container").append("<audio>").find("audio");
+
 	// hold the jQuery objects of the card
-	playerCard = null;
-	defenderCard = null;
+	let playerCard = null;
+	let defenderCard = null;
 
 	// hold the Card objects
-	playerObj = null;
-	defenderObj = null;
+	let playerObj = null;
+	let defenderObj = null;
 
 	// hold the jQuery objects of the zones
-	idleArea = $("#idle");
-	playerArea = $("#player");
-	defenderArea = $("#defense");
+	let idleArea = $("#idle");
+	let playerArea = $("#player");
+	let defenderArea = $("#defense");
 
-	infoLine = $("#infoLine");
+	let infoLine = $("#infoLine");
 
 	// click on an idle card to select
 	idleArea.on("click", ".idle", function() {
@@ -51,24 +53,37 @@ $(document).ready(function() {
 
 			infoLine.text("choose a card to fight")
 
+
+			$("#logo")
+				.append("<button>pause music</pause>")
+				.find("button")
+					.addClass("btn")
+					.attr("id", "pauseButton");
+
 			switch (parseInt(playerCard.attr("id"))) {
 				case 1:
+					bossTheme.attr("src", "./assets/audio/dancer-ost.mp3");
 					playerObj = cards.one;
 					break;
 
 				case 2:
+					bossTheme.attr("src", "./assets/audio/nameless-king-ost.mp3");
 					playerObj = cards.two;
 					break;
 
 				case 3:
+					bossTheme.attr("src", "./assets/audio/pontiff-ost.mp3");
 					playerObj = cards.three;
 					break;
 
 				case 4:
+					bossTheme.attr("src", "./assets/audio/soul-of-cinder-ost.mp3");
 					playerObj = cards.four;
 					break;
 
 			}
+
+			bossTheme.trigger("play");
 
 		} else if (defenderCard === null) {
 
@@ -122,14 +137,14 @@ $(document).ready(function() {
 			.text(defenderObj.health);
 
 		$("#lastAttack")
-			.text(playerCard.find(".name").text() + 
-			" attacked " + defenderCard.find(".name").text() + 
+			.html("<strong>" + playerCard.find(".name").text() + "</strong>" +
+			" attacked " + "<strong>" + defenderCard.find(".name").text() + "</strong>" +
 			" for " + playerObj.attack + 
 			" damage!");
 
 		$("#lastCAttack")
-			.text(defenderCard.find(".name").text() +
-			" counter attacked " + playerCard.find(".name").text() +
+			.html("<strong>" + defenderCard.find(".name").text() + "</strong>" +
+			" counter attacked " + "<strong>" + playerCard.find(".name").text() + "</strong>" +
 			" for " + defenderObj.cAttack + 
 			" damage!");
 
@@ -163,5 +178,19 @@ $(document).ready(function() {
 	$("#buttonLine").on("click", "#resetButton", function(){
 		location.reload()
 	});
+
+	$("#logo").on("click", "#pauseButton", function(){
+		bossTheme.trigger("pause");
+
+		$("pauseButton").attr("id", "#playButton").text("play music");
+	});
+
+	$("#logo").on("click", "#playButton", function(){
+		bossTheme.trigger("play");
+
+		$("#playButton").attr("id", "#pauseButton").text("pause music");
+	});
+
+
 
 });

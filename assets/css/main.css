@@ -43,6 +43,7 @@ h2 {
 h2 img {
 	width: 400px;
 	margin: 0;
+	display: inline-block;
 }
 
 h3 {
