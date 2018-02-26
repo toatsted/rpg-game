@@ -20,6 +20,7 @@ $(document).ready(function() {
 	}
 
 	let bossTheme = $(".container").append("<audio>").find("audio");
+	document.querySelector("audio").volume = .2;
 
 	// hold the jQuery objects of the card
 	let playerCard = null;
@@ -55,9 +56,9 @@ $(document).ready(function() {
 
 
 			$("#logo")
-				.append("<button>pause music</pause>")
+				.append("<button></button>")
 				.find("button")
-					.addClass("btn")
+					.addClass("btn fa fa-pause")
 					.attr("id", "pauseButton");
 
 			switch (parseInt(playerCard.attr("id"))) {
@@ -182,13 +183,13 @@ $(document).ready(function() {
 	$("#logo").on("click", "#pauseButton", function(){
 		bossTheme.trigger("pause");
 
-		$("pauseButton").attr("id", "#playButton").text("play music");
+		$("#pauseButton").attr("id", "playButton").removeClass("fa-pause").addClass("fa-play");
 	});
 
 	$("#logo").on("click", "#playButton", function(){
 		bossTheme.trigger("play");
 
-		$("#playButton").attr("id", "#pauseButton").text("pause music");
+		$("#playButton").attr("id", "pauseButton").removeClass("fa-play").addClass("fa-pause");
 	});
 
 
