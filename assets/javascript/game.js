@@ -183,13 +183,19 @@ $(document).ready(function() {
 	$("#logo").on("click", "#pauseButton", function(){
 		bossTheme.trigger("pause");
 
-		$("#pauseButton").attr("id", "playButton").removeClass("fa-pause").addClass("fa-play");
+		$("#pauseButton")
+			.attr("id", "playButton")
+			.removeClass("fa-pause")
+			.addClass("fa-play");
 	});
 
 	$("#logo").on("click", "#playButton", function(){
 		bossTheme.trigger("play");
 
-		$("#playButton").attr("id", "pauseButton").removeClass("fa-play").addClass("fa-pause");
+		$("#playButton")
+			.attr("id", "pauseButton")
+			.removeClass("fa-play")
+			.addClass("fa-pause");
 	});
 
 
