@@ -20,7 +20,7 @@ $(document).ready(function() {
 	}
 
 	let bossTheme = $(".container").append("<audio>").find("audio");
-	document.querySelector("audio").volume = .2;
+	document.querySelector("audio").volume = .1;
 
 	// hold the jQuery objects of the card
 	let playerCard = null;
